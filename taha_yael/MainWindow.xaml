@@ -5,22 +5,120 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:taha_yael"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="DarkSlateBlue">
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel Margin="10">
-            <TextBlock Text="Entrez le nom du pays :" Margin="0,0,0,5"/>
-            <TextBox x:Name="CountryNameTextBox" Width="200" Margin="0,0,0,10"/>
-            <Button Content="Rechercher" Click="SearchButton_Click" Width="100" Margin="0,0,0,10"/>
 
-            <!-- Ajoutez des TextBlocks pour afficher les informations sur le pays -->
-            <TextBlock x:Name="NameTextBlock" Text="" Margin="0,0,0,5"/>
-            <TextBlock x:Name="CapitalTextBlock" Text="" Margin="0,0,0,5"/>
-            <TextBlock x:Name="PopulationTextBlock" Text="" Margin="0,0,0,5"/>
-            <TextBlock x:Name="RegionTextBlock" Text="" Margin="0,0,0,5"/>
-            <!-- Ajout de l'image pour afficher le drapeau -->
-            <Image x:Name="FlagImage" Grid.Row="6" Margin="5" Width="100" Height="100"/>
 
-            <!-- Ajoutez d'autres TextBlocks pour afficher d'autres informations si nécessaire -->
-        </StackPanel>
+        <!-- 3 Grid Row -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <!-- Titre de l'api -->
+        <TextBlock Grid.Row="0" Text="REST COUNTRIES API" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Cascadia Code SemiBold" />
+        <!-- Dans le Row 0 , 3 Grid colonnes -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="Black" BorderThickness="2" Padding="1" Background="WhiteSmoke" Margin="150,30,150,30" Grid.Column="1">
+                <TextBox x:Name="CountryNameTextBox" Margin="-3,-3,-3,-3">
+
+                </TextBox>
+            </Border>
+            <Button Content="Rechercher" Click="SearchButton_Click" Grid.Column="1" Margin="346,30,27,30" />
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Border BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="1" Background="WhiteSmoke"  Margin="10,2,10,2">
+                    <TextBlock x:Name="NameTextBlock" Text="" Margin="0,0,0,5" HorizontalAlignment="Left" Width="238"   />
+                </Border>
+                <Border  Grid.Row="1" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="1" Background="WhiteSmoke"  Margin="10,2,10,2">
+                    <TextBlock x:Name="CapitalTextBlock" Text="" Margin="0,0,0,5" HorizontalAlignment="Left" Width="238"/>
+                </Border>
+                <Border  Grid.Row="2" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="1" Background="WhiteSmoke"  Margin="10,2,10,2">
+                    <TextBlock x:Name="PopulationTextBlock" Text="" Margin="0,0,0,5"  HorizontalAlignment="Left" Width="238"/>
+                </Border>
+                <Border  Grid.Row="3" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="1" Background="WhiteSmoke"  Margin="10,2,10,2">
+                    <TextBlock x:Name="RegionTextBlock" Text="" Margin="0,0,0,5" HorizontalAlignment="Left" Width="238"/>
+                </Border>
+
+                <Border Grid.Row="4"  BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="1" Background="WhiteSmoke"  Margin="10,2,10,2">
+                    <TextBlock x:Name="currency" Text="" Margin="0,0,0,5" HorizontalAlignment="Left" Width="238"/>
+                </Border>
+
+                <Border  Grid.Row="5" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="1" Background="WhiteSmoke"  Margin="10,2,10,2">
+                    <TextBlock x:Name="superficie" Text="" Margin="0,0,0,5" HorizontalAlignment="Left" Width="238"/>
+                </Border>
+
+
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+
+
+                </Grid.RowDefinitions>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Border BorderBrush="Black" BorderThickness="2"  Padding="1" Background="WhiteSmoke" Margin="20,80,20,80">
+                    <Image x:Name="FlagImage" />
+                </Border>
+
+            </Grid>
+
+            <Grid Grid.Column="2">
+
+                <Border Grid.Row="0" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="1" Background="WhiteSmoke" Margin="10,2,10,2" >
+                    <TextBlock x:Name="codetelephonique" Text="" Margin="0,0,0,1" HorizontalAlignment="Center" Width="280"   />
+                </Border>
+                <Border Grid.Row="1" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="1" Background="WhiteSmoke"  Margin="10,2,10,2">
+                    <TextBlock x:Name="gouvernement" Text="" Margin="7,0,0,5" HorizontalAlignment="Left" Width="290"   />
+                </Border>
+                <Border  Grid.Row="2" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="1" Background="WhiteSmoke"  Margin="10,2,10,2">
+                    <TextBlock x:Name="timezone" Text="" HorizontalAlignment="Center" Width="280"   />
+                </Border>
+                <Border  Grid.Row="3"  BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="1" Background="WhiteSmoke"  Margin="10,2,10,2">
+                    <TextBlock x:Name="demonym" Text="" Margin="7,0,0,5" HorizontalAlignment="Left" Width="231"   />
+                </Border>
+                <Border  Grid.Row="4" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="1" Background="WhiteSmoke"  Margin="10,2,10,2">
+                    <TextBlock x:Name="domaineinternet" Text="" Margin="7,0,0,5" HorizontalAlignment="Left" Width="231"   />
+                </Border>
+                <Border  Grid.Row="5" BorderBrush="Black" BorderThickness="2" CornerRadius="5" Padding="1" Background="WhiteSmoke"  Margin="10,2,10,2">
+                    <TextBlock x:Name="borders" Text="" Margin="0,0,0,5" HorizontalAlignment="Center" Width="280"   />
+                </Border>
+
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+
+
+                </Grid.RowDefinitions>
+
+            </Grid>
+
+        </Grid>
+
+
     </Grid>
 </Window>
