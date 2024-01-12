@@ -7,6 +7,8 @@ using Newtonsoft.Json;
 using System.Windows.Media.Imaging;
 using System.Linq;
 using System.Windows.Controls;
+using taha_yael.page;
+
 
 namespace taha_yael
 {
@@ -81,7 +83,11 @@ namespace taha_yael
 
 
         }
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Quizz quizzWindow = new Quizz();
+            quizzWindow.Show();
+        }
 
     }
 
@@ -92,7 +98,7 @@ namespace taha_yael
         public int population { get; set; }
         public string region { get; set; }
         public Flags flags { get; set; }
-        public string currency { get; set; }
+        public string currency{ get; set; }
         public double? area { get; set; }
         public List<double> latlng { get; set; }
         public Idd idd { get; set; }
@@ -121,6 +127,7 @@ namespace taha_yael
         public string png { get; set; }
     }
 }
+
 
 
 // Root myDeserializedClass = JsonConvert.DeserializeObject<List<Root>>(myJsonResponse);
