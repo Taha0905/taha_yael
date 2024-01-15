@@ -72,7 +72,7 @@ namespace taha_yael
 
 
             // Nouvelles propriétés
-            currency.Text = $"Monnaie : {countryInfo.currency}";
+            currency.Text = $"Code Postal : {countryInfo.postalCode.format}";
             superficie.Text = $"Superficie : {countryInfo.area} km²";
           
 
@@ -98,7 +98,7 @@ namespace taha_yael
         public int population { get; set; }
         public string region { get; set; }
         public Flags flags { get; set; }
-        public string currency{ get; set; }
+   
         public double? area { get; set; }
         public List<double> latlng { get; set; }
         public Idd idd { get; set; }
@@ -116,6 +116,17 @@ namespace taha_yael
         public string government { get; set; }  // Ajoutez cette ligne pour la propriété manquante
         public List<string> tld { get; set; }   // Ajoutez cette ligne pour la propriété manquante
     }
+    public class Currencies
+    {
+        public List<Currency> used { get; set; }
+    }
+
+    public class Currency
+    {
+        public string name { get; set; }
+        public string symbol { get; set; }
+    }
+
 
     public class Name
     {

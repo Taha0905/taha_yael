@@ -96,7 +96,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Images\FOND.webp" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -105,6 +104,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\fond api pays.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\kame house.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\quizz design.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\styler.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

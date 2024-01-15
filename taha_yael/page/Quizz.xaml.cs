@@ -76,7 +76,6 @@ namespace taha_yael.page
                 MessageBox.Show("Aucun drapeau disponible.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
             if (currentFlag != null)
@@ -92,13 +91,15 @@ namespace taha_yael.page
                 }
                 else
                 {
-                    messageTextBlock.Text = "Mauvaise réponse. Essayez à nouveau.";
+                    // Affichez le message d'erreur avec la bonne réponse
+                    messageTextBlock.Text = $"Mauvaise réponse. Essayez à nouveau. La bonne réponse était : {paysAttendu}";
                 }
 
                 // Affichez le drapeau suivant
                 AfficherDrapeauAleatoire();
             }
         }
+
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
